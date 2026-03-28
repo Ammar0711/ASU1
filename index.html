@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+<title>My ASU</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 20px;
+            font-family: sans-serif;
+            background-color: #fff;
+            margin: 0;
+        }
+
+        /* الحاوية الرمادية العلوية */
+        .banner-rect {
+            width: 95%; 
+            height: 180px;
+            background-color: #f7f7f7;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; 
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        /* الصورة الشخصية */
+        .inner-photo {
+            width: 160px;
+            height: 160px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* الدائرة الخضراء الخارجية */
+        .circle-container {
+            width: 130px;
+            height: 130px;
+            border: 10px solid #008000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative; /* ضروري لتحديد موقع الصح بدقة */
+        }
+
+        /* رسم علامة الصح المطابقة للصورة */
+        .check-icon {
+            position: relative;
+            width: 48px;  /* الطول الكلي التقريبي */
+            height: 85px; /* الارتفاع الكلي التقريبي */
+            transform: rotate(38deg); /* زاوية الميلان الدقيقة */
+            margin-top: -10px; /* ضبط الارتفاع الرأسي داخل الدائرة */
+            margin-right: 5px; /* ضبط الإزاحة الأفقية */
+        }
+
+        /* الضلع القصير (الأيسر) */
+        .check-icon::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 12px; /* السمك */
+            height: 35px; /* الطول */
+            background-color: #008000;
+            border-radius: 2px;
+        }
+
+        /* الضلع الطويل (الأيمن) */
+        .check-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 55px; /* الطول */
+            height: 12px; /* السمك */
+            background-color: #008000;
+            border-radius: 2px;
+            transform: none; /* يبقى أفقي بالنسبة لزاوية الميلان الأصلية */
+        }
+
+        /* النص */
+        .text {
+            font-size: 26px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-rect">
+        <div class="inner-photo">
+            <img src="zena.png" alt="profile">
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="acorn-icons acorn-icons-check-circle icon text-center fa-lg" style="color: green;height:200px; width:200px"><path d="M17 5L10.6329 12.2032C10.2511 12.6351 9.58418 12.6556 9.17656 12.248L6.92857 10"></path><path d="M18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10C2 5.58172 5.58172 2 10 2C11.0609 2 12.0736 2.20651 13 2.58152"></path></svg>
+
+    <h1 style="color:black" id="timer" class="text-center font-weight-bol">
+                د. مواصلات-صويلح
+            </h1>
+
+</body>
+</html>
